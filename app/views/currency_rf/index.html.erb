@@ -1,0 +1,28 @@
+<h1 class="title">The official exchange rate of the Russian ruble against foreign currencies</h1>
+<h2 class="title">on <td><%= @date %></td></h2>
+
+<main class="main">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="main-value">
+        <th>Currency name</th>
+        <th>Abbreviation</th>
+        <th>Scale</th>
+        <th>Rate</th>
+        <th>Previous Rate</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @currency_hash.each do |currency| %>
+        <tr>
+          <td><%= currency.fetch('Name') %></td>
+          <td class="main-value"><%= currency.fetch('CharCode') %></td>
+          <td class="main-value"><%= currency.fetch('Nominal') %></td>
+          <td class="main-value"><%= currency.fetch('Value').round(2) %></td>
+          <td class="main-value"><%= currency.fetch('Previous').round(2) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>

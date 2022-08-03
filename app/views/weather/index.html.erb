@@ -1,0 +1,117 @@
+<h1 class="title">Weather</h1>
+
+<main class="content">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-minsk-tab" data-bs-toggle="pill" data-bs-target="#pills-minsk" type="button" role="tab" aria-controls="pills-minsk" aria-selected="true">Minsk</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-vitebsk-tab" data-bs-toggle="pill" data-bs-target="#pills-vitebsk" type="button" role="tab" aria-controls="pills-vitebsk" aria-selected="false">Vitebsk</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-brest-tab" data-bs-toggle="pill" data-bs-target="#pills-brest" type="button" role="tab" aria-controls="pills-brest" aria-selected="false">Brest</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-mogilev-tab" data-bs-toggle="pill" data-bs-target="#pills-mogilev" type="button" role="tab" aria-controls="pills-mogilev" aria-selected="false">Mogilev</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-gomel-tab" data-bs-toggle="pill" data-bs-target="#pills-gomel" type="button" role="tab" aria-controls="pills-gomel" aria-selected="false">Gomel</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-grodno-tab" data-bs-toggle="pill" data-bs-target="#pills-grodno" type="button" role="tab" aria-controls="pills-grodno" aria-selected="false">Grodno</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-minsk" role="tabpanel" aria-labelledby="pills-minsk-tab">
+        <table class="table table-bordered table-striped">
+          <%= render 'theader' %>
+          <tbody>
+            <tr class="main-value">
+              <td><%= Time.now.strftime("%B %e, %Y") %></td>
+              <td><%= @weather_minsk.fetch('name') %></td>
+              <td><%= @weather_minsk.dig('main', 'temp') %> °C</td>
+              <td><%= @weather_minsk.dig('wind', 'speed') %> m/s</td>
+              <td><%= @weather_minsk.dig('main', 'humidity') %> %</td>
+              <td><%= @weather_minsk.dig('weather', 0, 'description') %></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="pills-vitebsk" role="tabpanel" aria-labelledby="pills-vitebsk-tab">
+      <table class="table table-bordered table-striped">
+        <%= render 'theader' %>
+        <tbody>
+          <tr class="main-value">
+            <td><%= Time.now.strftime("%B %e, %Y") %></td>
+            <td><%= @weather_vitebsk.fetch('name') %></td>
+            <td><%= @weather_vitebsk.dig('main', 'temp') %> °C</td>
+            <td><%= @weather_vitebsk.dig('wind', 'speed') %> m/s</td>
+            <td><%= @weather_vitebsk.dig('main', 'humidity') %> %</td>
+            <td><%= @weather_vitebsk.dig('weather', 0, 'description') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade" id="pills-brest" role="tabpanel" aria-labelledby="pills-brest-tab">
+      <table class="table table-bordered table-striped">
+        <%= render 'theader' %>
+        <tbody>
+          <tr class="main-value">
+            <td><%= Time.now.strftime("%B %e, %Y") %></td>
+            <td><%= @weather_brest.fetch('name') %></td>
+            <td><%= @weather_brest.dig('main', 'temp') %> °C</td>
+            <td><%= @weather_brest.dig('wind', 'speed') %> m/s</td>
+            <td><%= @weather_brest.dig('main', 'humidity') %> %</td>
+            <td><%= @weather_brest.dig('weather', 0, 'description') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade" id="pills-mogilev" role="tabpanel" aria-labelledby="pills-mogilev-tab">
+      <table class="table table-bordered table-striped">
+        <%= render 'theader' %>
+        <tbody>
+          <tr class="main-value">
+            <td><%= Time.now.strftime("%B %e, %Y") %></td>
+            <td><%= @weather_mogilev.fetch('name') %></td>
+            <td><%= @weather_mogilev.dig('main', 'temp') %> °C</td>
+            <td><%= @weather_mogilev.dig('wind', 'speed') %> m/s</td>
+            <td><%= @weather_mogilev.dig('main', 'humidity') %> %</td>
+            <td><%= @weather_mogilev.dig('weather', 0, 'description') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade" id="pills-gomel" role="tabpanel" aria-labelledby="pills-gomel-tab">
+      <table class="table table-bordered table-striped">
+        <%= render 'theader' %>
+        <tbody>
+          <tr class="main-value">
+            <td><%= Time.now.strftime("%B %e, %Y") %></td>
+            <td><%= @weather_gomel.fetch('name') %></td>
+            <td><%= @weather_gomel.dig('main', 'temp') %> °C</td>
+            <td><%= @weather_gomel.dig('wind', 'speed') %> m/s</td>
+            <td><%= @weather_gomel.dig('main', 'humidity') %> %</td>
+            <td><%= @weather_gomel.dig('weather', 0, 'description') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade" id="pills-grodno" role="tabpanel" aria-labelledby="pills-grodno-tab">
+      <table class="table table-bordered table-striped">
+        <%= render 'theader' %>
+        <tbody>
+          <tr class="main-value">
+            <td><%= Time.now.strftime("%B %e, %Y") %></td>
+            <td><%= @weather_grodno.fetch('name') %></td>
+            <td><%= @weather_grodno.dig('main', 'temp') %> °C</td>
+            <td><%= @weather_grodno.dig('wind', 'speed') %> m/s</td>
+            <td><%= @weather_grodno.dig('main', 'humidity') %> %</td>
+            <td><%= @weather_grodno.dig('weather', 0, 'description') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

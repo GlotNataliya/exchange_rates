@@ -1,0 +1,26 @@
+<h1 class="title">The official exchange rate of the Belarusian ruble against foreign currencies</h1>
+<h2 class="title">on <td><%= @date %></td></h2>
+
+<main class="content">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="main-value">
+        <th>Currency name</th>
+        <th>Abbreviation</th>
+        <th>Scale</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @currency_hash.each do |currency| %>
+        <tr>
+          <td><%= currency.fetch('Cur_Name') %></td>
+          <td class="main-value"><%= currency.fetch('Cur_Abbreviation') %></td>
+          <td class="main-value"><%= currency.fetch('Cur_Scale') %></td>
+          <td class="main-value"><%= currency.fetch('Cur_OfficialRate') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>
