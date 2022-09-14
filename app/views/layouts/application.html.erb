@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag "application.bootstrap", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -17,6 +17,7 @@
             <%= link_to 'Currency Belarus', currency_index_path, class: "nav-link active" %>
             <%= link_to 'Currency Russia', currency_rf_index_path, class: "nav-link" %>
             <%= link_to 'Weather', weather_index_path, class: "nav-link" %>
+            <%= link_to 'Nasa images', nasa_images_index_path, class: "nav-link" %>
           </div>
       </div>
     </nav>

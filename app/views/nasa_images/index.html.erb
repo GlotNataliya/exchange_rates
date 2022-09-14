@@ -1,0 +1,13 @@
+<div class="main">
+  <h1 class="main-title"><%= @nasa_hash['title'] %></h1>
+    <div class="main-date"><%= friendly_date @date %></div>
+    <i onClick="window.location.reload();" class="fa fa-refresh"></i>
+  <% if @nasa_hash['url'].match?('youtube' || 'stefanom' || 'vimeo') && @nasa_hash['url'].present? %>
+    <div class="main-video">
+      <iframe src= "<%= @nasa_hash['url'] %>" width='900' height='600' frameborder='0' allowfullscreen></iframe>
+    </div>
+  <% else %>
+    <div class="main-image"><%= image_tag(@nasa_hash['url'], class: 'image')  %></div>
+  <% end %>
+  <div class="main-explanation"><%= @nasa_hash['explanation'] %></div>
+</div>

@@ -3,9 +3,8 @@ class CurrencyRfController < ApplicationController
 
   def index
     base_uri = 'https://www.cbr-xml-daily.ru/daily_json.js'
-    json = HTTParty.get(URI.parse(base_uri))
-    hash = JSON.parse(json)
-    @currency_hash = hash['Valute'].values
-    @date = Date.parse(hash.fetch('Timestamp')).strftime("%B %e, %Y")
+    json = self.class.get(base_uri, format: :json)
+    @currency_hash = json['Valute'].values
+    @date = Date.parse(json.fetch('Timestamp'))
   end
 end
