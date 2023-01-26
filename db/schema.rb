@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_03_112927) do
-  create_table "currencies", force: :cascade do |t|
-    t.string "index"
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_132122) do
+  create_table "weathers", force: :cascade do |t|
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

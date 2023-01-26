@@ -1,0 +1,5 @@
+<%= form_tag action: "create" do %>
+  <div class="form-group">
+    <%= select_tag :city, options_for_select(@cities, "#{@city_name}"), class: "form-select ms-3", onchange: "form.submit();" %>
+  </div>
+<% end %>

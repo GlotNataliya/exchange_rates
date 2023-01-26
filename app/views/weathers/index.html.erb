@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="title">Weather</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-3 mb-5">
+      <%= render partial: "form" %>
+    </div>
+  </div>
+
+  <main class="content">
+    <%= render partial: "weather", locals: { weather: @weather } %>
+  </main>
+</div>

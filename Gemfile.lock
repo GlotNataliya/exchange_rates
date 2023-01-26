@@ -147,9 +147,11 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
-    pry (0.14.1)
+    pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -184,6 +186,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (3.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -250,9 +256,10 @@ DEPENDENCIES
   httparty
   importmap-rails
   jbuilder
-  pry
+  pry-rails
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  ransack
   sassc-rails
   selenium-webdriver
   sprockets-rails

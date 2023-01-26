@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+  <%= render 'region_weather/theader' %>
+  <tbody>
+    <tr class="main-value">
+      <td><%= Time.now.strftime("%B %e, %Y") %></td>
+      <td><%= weather.fetch('name') %></td>
+      <td><%= weather.dig('main', 'temp') %> °C</td>
+      <td><%= weather.dig('wind', 'speed') %> m/s</td>
+      <td><%= weather.dig('main', 'humidity') %> %</td>
+      <td><%= weather.dig('weather', 0, 'description') %></td>
+      <td><%= image_tag('http://openweathermap.org/img/wn/' + weather.dig('weather', 0, 'icon') + '@2x.png') %></td>
+    </tr>
+  </tbody>
+</table>

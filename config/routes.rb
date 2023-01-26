@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'currency_rf/index'
-  get 'weather/index'
-  get 'currency/index'
-  get 'nasa_images/index'
+  resources :currency, only: %i[index]
+  resources :currency_rf, only: %i[index]
+  resources :region_weather, only: %i[index]
+  resources :nasa_images, only: %i[index]
+  resources :weathers
 
   root 'currency#index'
 end
