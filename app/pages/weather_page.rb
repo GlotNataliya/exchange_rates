@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class WeatherPage
   def initialize(city_name)
     @city_name = city_name
-    @api_key = Rails.application.credentials.fetch(:api_key, '').freeze
+    @api_key = Rails.application.credentials.fetch(:api_key, "").freeze
   end
 
   def call

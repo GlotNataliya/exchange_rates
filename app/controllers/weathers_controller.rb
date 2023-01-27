@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WeathersController < ApplicationController
   def index
     @cities = Weather.city_names.keys

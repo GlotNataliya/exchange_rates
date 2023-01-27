@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class RegionWeatherController < ApplicationController
   include HTTParty
 
   def index
-    api_key = Rails.application.credentials.fetch(:api_key, '').freeze
+    api_key = Rails.application.credentials.fetch(:api_key, "").freeze
 
     @weather_minsk = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?id=625143&appid=#{api_key}&lang=un&units=metric")
     @weather_vitebsk = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?id=620127&appid=#{api_key}&lang=un&units=metric")
@@ -11,6 +13,6 @@ class RegionWeatherController < ApplicationController
     @weather_gomel = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?id=627907&appid=#{api_key}&lang=un&units=metric")
     @weather_grodno = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?id=627904&appid=#{api_key}&lang=un&units=metric")
 
-    @weathers = [ @weather_minsk, @weather_vitebsk, @weather_brest, @weather_mogilev, @weather_gomel, @weather_grodno ]
+    @weathers = [@weather_minsk, @weather_vitebsk, @weather_brest, @weather_mogilev, @weather_gomel, @weather_grodno]
   end
 end

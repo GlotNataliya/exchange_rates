@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "boot"
 
 require "rails/all"
@@ -18,6 +20,6 @@ module ExchangeRates
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOWALL' }
+    config.action_dispatch.default_headers = { "X-Frame-Options" => "ALLOWALL" }
   end
 end
